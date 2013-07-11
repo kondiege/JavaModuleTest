@@ -1,0 +1,25 @@
+package javaModule;
+/**
+ * Msc student class that checks whether the students has passed the module or failed
+ * for an Msc student the passmark is 50%,hence above that is a pass and below that is a fail
+ * the Msc student has to pass the internal hurdle that is the average in class test mark also has to be above 50%
+ * to pass the module.An Msc student may pass the average mark but if he fails the internal hurdle he also fails the module
+ */
+class MscStudent extends Student 
+{
+    public MscStudent(int sId,String firstName,String lastName, int[] wSheetMarks, int[] lockDownLabMarks, int[] inClassTest)
+       {
+        super(sId,firstName,lastName, wSheetMarks, lockDownLabMarks, inClassTest); 
+       }
+        public void hasPassed()
+        {
+         if (this.average()>=50 && this.averageHurdle()>=50)//checks if both the average mark and also the in class hurdle is a pass or fail
+         {
+          System.out.print("pass");
+         }
+         else
+         {
+        System.out.println("fail");
+         }
+        }
+}
