@@ -1,0 +1,120 @@
+package javaModule;
+/**
+ * superclass student with information on students
+ *  and average marks for the work sheets,lock down lab sessions and in class tests are calculated 
+ *  the total average(of the three assessments) is also calculated
+ *  Student class is abstract as we only need the student as either an Msc student or undergraduate
+ *@param sID as student id 
+ *@param firstName as the first name of the student
+ *@param lastName as the last name of the student
+ *@param wSheetMarks as marks for the work sheets for the student
+ *@param lockDownLabMarks as the marks for the lock down lab sessions for the student
+ *@param inClassTest as the marks for the in class tests for the student
+ */
+abstract class Student 
+{
+ private int sId;
+ private String firstName;
+ private String lastName;
+ private int[] wSheetMarks;
+ private int[] lockDownLabMarks;
+ private int[] inClassTest;
+
+ 
+ public Student(int sId,String firstName,String lastName,int[] wSheetMarks,int[] lockDownLabMarks,int[] inClassTest) 
+  {
+		this.sId = sId;
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.wSheetMarks = wSheetMarks;
+		this.lockDownLabMarks = lockDownLabMarks;
+		this.inClassTest=inClassTest;
+
+	}
+
+ public int getSid()
+ {
+	 return sId;
+ }
+ 
+ public String getFirstName()
+ {
+	 return firstName; 
+	 
+ }
+ 
+ public String getLastName()
+ {
+	 return lastName; 
+	 
+ }
+ 
+ public int[] getWsheetMarks()
+ {
+	 return wSheetMarks; 
+	 
+ }
+ 
+ public int averageWsheet() //gets the average mark for the work sheets
+ {
+	 int x=0;
+	 for(int i=0;i<wSheetMarks.length;i++)
+	 {
+		 x+=wSheetMarks[i];
+	 }
+	 return  x/wSheetMarks.length;
+ }
+ 
+ public int[] getlockDownLabMarks()
+ {
+	 return lockDownLabMarks; 
+	 
+ }
+ public int averageLockDownLabMarks() //gets average marks for the lock down lab sessions
+ {
+	 int x=0;
+	 for(int i=0;i<lockDownLabMarks.length;i++)
+	 {
+		 x+=lockDownLabMarks[i];
+	 }
+	 return  x/lockDownLabMarks.length;
+ }
+ 
+ public int[] getinClassTest()
+ {
+	 return inClassTest; 
+ }
+ 
+ public int averageHurdle() //gets the average mark for the in class test
+ {
+	 int x=0;
+	 for(int i=0;i<inClassTest.length;i++)
+	 {
+		 x+=inClassTest[i];
+	 }
+	 return x/inClassTest.length;
+ }
+ 
+ public int average() // gets the average of all the 3 assessments
+ { 
+	 int mark= (averageWsheet()+averageLockDownLabMarks()+
+			 averageHurdle())/3; 
+	  if (mark>100||mark<0)
+	  {
+		  System.out.println("Warning invalid inputs"); //warning message when sum is more than 100
+		  System.exit(mark);
+	  }
+		return mark;
+	  
+ }
+ 
+ public String toString() //display method that shows student information and his average mark
+ {
+	 return firstName+" "+ lastName + "\n"+
+			"Student ID:"+sId+"\n"+
+	 	    // "Average WorkSheet mark:"+"\n";
+            //"Average lab marks:"+lockDownLabMarks+"\n" +
+            "Average in class marks:"+averageHurdle()+"\n"+
+            "Total Average:"+average()+"%";
+ }
+}
