@@ -1,0 +1,30 @@
+package javaModule;
+/**
+ * undergraduate student class that checks whether the students has passed the module or failed
+ * for an undergraduate student the passmark is 40%,hence above that is a pass and below that is a fail
+ * the undergraduate student has to pass the internal hurdle that is the average in class test mark also has to be above 40%
+ * to pass the module.An undergraduate student may pass the average mark but if he fails the internal hurdle he also fails the module
+ */
+class UnderGraduate extends Student
+{
+       public UnderGraduate(int sId,String firstName,String lastName, int[] wSheetMarks, int[] lockDownLabMarks, int[] inClassTest)
+       {
+           super(sId,firstName,lastName, wSheetMarks, lockDownLabMarks, inClassTest);
+          
+       }   
+           public void hasPassed()
+           {
+           if (this.average()>=40 && this.averageHurdle()>=40) //checks if both the average mark and also the in class hurdle is a pass or fail
+           {
+            System.out.print("pass");
+           }
+           else
+           {
+          System.out.println("fail");
+           }
+           }
+       
+       
+       
+
+}
