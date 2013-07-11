@@ -1,0 +1,90 @@
+package javaModule;
+
+/**
+ * 
+ *@author KeizoOndiege
+ *@return void-that is no return
+ *@since 24 november 2011
+ *@category tests for students ,both undergraduate and MSc students 
+ *         and whether the student has passed or failed,and also takes into 
+ *         consideration the in class test which must be passed to pass the module
+ */
+public class JavaModuleTest 
+{
+  public static  void main(String[] args)
+    {   
+        //int[] wSheet={60,60,60}; // % marks for 3 work sheets
+        //int[] lockDownLabSession={60,70,50}; //% marks for 3 lock down lab sessions
+        //int[] classTest={50,60,70};// % marks for 3 in class tests
+		//Student keizo = new Student(12322,"keizo","ondiege",wSheet,lockDownLabSession,classTest);
+       // System.out.println(keizo);
+		//keizo.average();
+		//System.out.println();
+        
+        //test for undergraduate who has passed
+		int[] wSheet2={60,60,60};// % marks for 3 work sheets
+        int[] lockDownLabSession2={60,70,50};//% marks for 3 lock down lab sessions
+        int[] classTest2={50,60,70};// % marks for 3 in class tests
+        UnderGraduate zola = new UnderGraduate(1244,"gianfranco","zola",wSheet2,lockDownLabSession2,classTest2);
+        System.out.println("Undergraduate: "+zola);
+        zola.hasPassed();
+		System.out.println();
+		System.out.println();
+
+		 //test for undergraduate who has failed the internal hurdle test on average
+		int[] wSheet3={50,50,50};// % marks for 3 work sheets
+        int[] lockDownLabSession3={60,70,50};//% marks for 3 lock down lab sessions
+        int[] classTest3={20,20,20};// % marks for 3 in class tests
+        UnderGraduate jim = new UnderGraduate(1244,"jim","jones",wSheet3,lockDownLabSession3,classTest3);
+        System.out.println("Undergraduate: "+jim);
+        jim.hasPassed();
+		System.out.println();
+		
+		 //test for undergraduate who has failed on average
+		int[] wSheet4={10,10,10};
+        int[] lockDownLabSession4={10,10,10};
+        int[] classTest4={40,40,40};
+        UnderGraduate jack = new UnderGraduate(1244,"jack","black",wSheet4,lockDownLabSession4,classTest4);
+        System.out.println("Undergraduate: "+jack);
+        jack.hasPassed();
+		System.out.println();
+		
+		//test for MscStudent who has passed
+		int[] wSheet5={60,60,60};// % marks for 3 work sheets
+        int[] lockDownLabSession5={60,70,50};//% marks for 3 lock down lab sessions
+        int[] classTest5={50,60,70};// % marks for 3 in class tests
+        MscStudent didier = new MscStudent(1244,"didier","drogba",wSheet5,lockDownLabSession5,classTest5);
+	    System.out.println("MscStudent: "+didier);
+        didier.hasPassed();
+        System.out.println();
+		System.out.println();
+
+		//test for MscStudent who has failed the internal hurdle test on average
+		int[] wSheet6={50,50,50};// % marks for 3 work sheets
+		int[] lockDownLabSession6={60,70,50};//% marks for 3 lock down lab sessions
+		int[] classTest6={20,20,20};// % marks for 3 in class tests
+		MscStudent slim = new MscStudent(1244,"slim","shady",wSheet6,lockDownLabSession6,classTest6);
+		System.out.println("MscStudent: "+slim);
+	    slim.hasPassed();
+	    System.out.println();
+					
+	    //test for MscStudent who has failed on average
+	    int[] wSheet7={10,10,10};
+        int[] lockDownLabSession7={10,10,10};
+        int[] classTest7={40,40,40};
+        MscStudent flo = new MscStudent(1244,"flo","andre",wSheet7,lockDownLabSession7,classTest7);
+        System.out.println("MscStudent: "+flo);
+        flo.hasPassed();
+        System.out.println();
+        
+        //test for undergraduate whos marks add upto more than 100
+        int[] wSheetF={1160,60,60};// % marks for 3 work sheets
+        int[] lockDownLabSessionF={160,110,150};//% marks for 3 lock down lab sessions
+        int[] classTestF={50,60,70};// % marks for 3 in class tests
+        UnderGraduate lamar = new UnderGraduate(1244,"lamar","odom",wSheetF,lockDownLabSessionF,classTestF);
+        System.out.println("Undergraduate:"+lamar);
+        lamar.hasPassed();
+        System.out.println();
+        System.out.println();
+    }
+}
